@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Silag</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="img/picture1.png" type="image/x-icon">
+
+</head>
+<body style="height:1500px;" id="home"  data-spy="scroll" data-target="#navbar" >
+
+<div class="container-fluid">
+  <br>
+   <p style="padding-left: 1050px;">VOLUME I | JANUARY-MAY 2019
+</p>
+</div>
+<nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+  <a class="navbar-brand" href="#"><img src="img/picture1.png">S<span class="highlight">î</span>LAG</a>
+ 	<button class="navbar-toggler" data-target="#navbar" type="button" data-toggle="collapse">
+ 		<span class="navbar-toggler-icon"></span>
+ 	</button>
+ 	 <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+ 	<div class="collapse navbar-collapse" id="navbar">
+ 		<ul class="navbar-nav ml-auto">
+ 			<li class="navbar-item">
+ 				<a class="nav-link" href="home.html">Home</a>
+ 			</li>
+ 			<li class="navbar-item">
+ 				<a class="nav-link" href="news.html">News</a>
+ 			</li>
+ 			<li class="navbar-item">
+ 				<a class="nav-link" href="#">Reperiences</a>
+ 			</li>
+ 			<li class="navbar-item active">
+ 				<a class="nav-link" href="#">Notes</a>
+ 			</li>
+ 			<li class="navbar-item">
+ 				<a class="nav-link" href="#about">About</a>
+ 			</li>
+ 		</ul>
+ 	</div>
+</nav>
+
+ <script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+//scrolling
+$(document).ready(function(){
+		$("a").on('click',function(event){
+			if (this.hash !== "") {
+				event.preventDefault();
+				var hash = this.hash;
+
+				$('html,body').animate ({
+					scrollTop:
+					$(hash).offset().Top
+				}, 800, function(){
+					window.location.hash = hash;
+				});
+			}
+		});// End if
+	});
+</script>
+ 
+</body>
+</html>
